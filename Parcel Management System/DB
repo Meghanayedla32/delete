@@ -1,0 +1,32 @@
+CREATE TABLE customers (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    country_code VARCHAR(5) NOT NULL,
+    mobile VARCHAR(15) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    username VARCHAR(20) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+select * from CUSTOMERS;
+
+CREATE TABLE officers (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    username VARCHAR(20) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO officers (name, email, username, password) VALUES ('Meghana Yedla', 'default@gmail.com', 'Meghana', '1234');
+INSERT INTO officers (name, email, username, password) VALUES ('Robert James', 'default1@gmail.com', 'James', '2345');
+INSERT INTO officers (name, email, username, password) VALUES ('Anne Theo', 'default2@gmail.com', 'Anne', '3456'); 
+INSERT INTO officers (name, email, username, password) VALUES ('Flin Ryder', 'default4@gmail.com', 'Flin', '4567');
+
+
+UPDATE officers set username = 'AnneTheo' where id = 3;
+UPDATE officers set username = 'FlinRyder' where id = 4;
+
+
+select * from OFFICERS;
