@@ -48,6 +48,7 @@ public class LoginServelet extends HttpServlet {
             session.setAttribute("role", role);
             
             
+            
             if ("customer".equals(role)) {
                 response.sendRedirect("customer_home.jsp");
             } else if ("officer".equals(role)) {

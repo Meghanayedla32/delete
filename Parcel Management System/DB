@@ -30,3 +30,35 @@ UPDATE officers set username = 'FlinRyder' where id = 4;
 
 
 select * from OFFICERS;
+
+
+CREATE TABLE booking (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    customer_id INT NOT NULL,
+    sender_name VARCHAR(50),
+    sender_address VARCHAR(255),
+    sender_email VARCHAR(100),
+    sender_contact VARCHAR(30),
+    receiver_name VARCHAR(50),
+    receiver_address VARCHAR(255),
+    receiver_pin VARCHAR(6),
+    receiver_contact VARCHAR(15),
+    receiver_email VARCHAR(100),
+    parcel_size VARCHAR(50),
+    contents VARCHAR(255),
+    delivery_speed VARCHAR(50),
+    packaging_pref VARCHAR(50),
+    pickup_date DATE,
+    pickup_time VARCHAR(20),
+    payment_method VARCHAR(20),
+    service_cost DECIMAL(10,2),
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
+);
+
+select *  from BOOKING;
+
+delete from booking;
+
+ALTER TABLE booking
+ADD booking_id VARCHAR(12) UNIQUE;
+

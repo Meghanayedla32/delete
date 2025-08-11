@@ -30,7 +30,7 @@
             <div style="color:red;">${error}</div>
         </c:if>
 
-        <form action="${pageContext.request.contextPath}/LoginServelet" method="post" onsubmit="return validateLogin();">
+        <form action="LoginServelet" method="post" onsubmit="return validateLogin();">
             <label for="role">Select Role:</label>
             <select id="role" name="role" required>
                 <option value="customer">Customer</option>
